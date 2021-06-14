@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@400;500&display=swap");
+
+:root {
+  --primaryColor: #673ab7;
+  --primaryDarkColor: #512da8;
+  --primaryLightColor: #d1c4e9;
+  --accentColor: #ffeb3b;
+  --text: #ffffff;
+  --textPrimary: #212121;
+  --textSecondary: #757575;
+  --dividerColor: #bdbdbd;
+  background: radial-gradient(
+    circle closest-side,
+    var(--primaryLightColor),
+    var(--text)
+  );
+  width: 100%;
+  height: 100%;
+}
+.App {
+  color: var(--text);
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App h1 {
+  color: var(--primaryColor);
+  font-size: 2rem;
+  transform: skew(-15deg);
+  transition: all 500ms linear;
+}
+
+.App h1:hover {
+  font-size: 3rem;
+  transform: skew(0);
+  text-shadow: 5px 5px 2rem var(--primaryLightColor);
+}
+
+.countdown-wrapper {
+  font-family: "Teko", sans-serif;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.time-section {
+  margin: 0 0.5rem;
+  color: var(--text);
+  text-shadow: 0.5rem 0.5rem 1rem var(--primaryColor);
+  transition: all 0s ease-in;
+}
+
+.time-section:nth-child(even) {
+  font-size: 4rem;
+}
+
+.time-section:nth-child(odd) {
+  background-color: var(--primaryColor);
+  box-shadow: -5px -5px 0 var(--primaryLightColor);
+  border-radius: 1rem 0 1rem;
+  padding: 1rem;
+  width: 5rem;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.time-section:nth-child(odd):hover {
+  box-shadow: var(--textPrimary);
+  background: var(--primaryColor);
+  -webkit-animation: 3s rotate linear 500ms;
+  animation: 3s rotate linear 500ms;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
